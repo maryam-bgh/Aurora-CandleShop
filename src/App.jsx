@@ -1,20 +1,20 @@
-import React from 'react'
-import { TodoProvider } from './context/TodoProvider';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
-
+import { Routes, Route } from "react-router-dom"
+import MainLayout from "./layouts/MainLayout"
 
 const App = () => {
   return (
     <div>
-      <TodoProvider>
-        <TaskForm />
-        <TaskList />
-      </TodoProvider>
-
-
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
     </div>
   )
+
 }
 
 export default App
